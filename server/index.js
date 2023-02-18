@@ -23,7 +23,7 @@ const PORT=8000;
 const Username=process.env.Db_user;
 const Password=process.env.Db_Password;
 
-Connection(Username,Password)
+Connection(Password)
 
 app.listen(PORT,()=>console.log(`Server is running at port ${PORT}`));
 
