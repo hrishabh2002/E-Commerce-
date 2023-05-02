@@ -1,7 +1,7 @@
 
 import axios from "axios";
 
-const URL='https://e-commerce-purl.onrender.com';
+const URL='http://localhost:8000';
 
 export const AuthenticateSignup= async(data)=>{
 
@@ -17,7 +17,7 @@ export const AuthenticateLogin= async(data)=>{
     try{
         return await axios.post(`${URL}/login/`,data);
     }catch(error){
-        console.log("error occured in authentication login api",error);
+        console.log("error occured in authentication login api",error.response);
         return error.response;
     }
 }

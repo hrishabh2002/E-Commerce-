@@ -27,7 +27,7 @@ const Discount=styled(Typography)`
 color:green;
 font-weight:500;
 `
-const TotalView = ({cartItem})=>{
+const TotalView = ({cartItem,setTprice})=>{
 
     const [price,setPrice] = useState(0);
     const [discount,setDiscount] = useState(0);
@@ -43,6 +43,7 @@ const TotalView = ({cartItem})=>{
                 ))
                 setPrice(price);
                 setDiscount(discount);
+                setTprice(price-discount+40);
             }
              totalAmount();
         },[cartItem]);

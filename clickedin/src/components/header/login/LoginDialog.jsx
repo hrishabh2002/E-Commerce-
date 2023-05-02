@@ -5,6 +5,7 @@ import AuthenticateSignup from '../../../service/api'
 import { DataContext } from '../../../context/dataProvider'
 import { AuthenticateLogin } from '../../../service/api'
 
+
 const Component=styled(Box)`
 height:70vh;
 width:90vh;
@@ -92,11 +93,13 @@ const loginInitialValues={
     password:''
 }
 
+const {setAuthenticate}=useContext(DataContext)
 const [signup,setSignup]=useState(signupInitialValues);
 const [account,setAccount]=useState(AccountinitialValues.login);
 const {setAcc}=useContext(DataContext);
 const [login,setLogin]=useState(loginInitialValues);
 const [error,setError]=useState(false);
+
 
     const handleClick=()=>{
         setAccount(AccountinitialValues.sign);
@@ -116,8 +119,8 @@ const [error,setError]=useState(false);
         if(!response)
         return;
         handleClose();
-       
-        setAcc(signup.fname);
+        setAuthenticate(true);
+        setAcc(signup.username);
     }
     const handleVchange=(e)=>{
         setLogin({...login,[e.target.name]:e.target.value});
@@ -128,9 +131,11 @@ const [error,setError]=useState(false);
        let response= await AuthenticateLogin(login);
        if(response.status===200){
         handleClose();
+        setAuthenticate(true);
         setAcc(response.data.data.fname);
        }
        else{
+        setAuthenticate(false)
             setError(true);
        }
     }

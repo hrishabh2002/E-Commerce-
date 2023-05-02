@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import TotalView from "./TotalView";
 import EmptyCart from "./EmptyCart";
+import PayButton from "../Payment/payButton";
+import { useState } from "react";
 
 const Container=styled(Grid)(({theme})=>({
     padding:'30px 135px',
@@ -23,15 +25,7 @@ background:#fff;
 box-shadow:0 -2px 10px 0 rgb(0 0 0 / 10%);
 border-top:1px solid #f0f0f0;
 `
-const StyledButton=styled(Button)`
-display:flex;
-margin-left:auto;
-color:#fff;
-background-color:#fb641b;
-width:250px;
-height:51px;
-border-radius:2px;
-`
+
 const LeftComponent=styled(Grid)(({theme})=>({
     paddingRight:15,
     [theme.breakpoints.down('md')]:{
@@ -42,7 +36,9 @@ const LeftComponent=styled(Grid)(({theme})=>({
 
 const Cart=()=>{
 
-    const {cartItems}=useSelector(state=>state.cart)
+    const [price,setPrice]=useState(0);
+    const {cartItems}=useSelector(state=>state.cart);
+    
     return (
     <>
     {
@@ -58,12 +54,12 @@ const Cart=()=>{
                 ))
             }
             <ButtonWrapper>
-                <StyledButton>Place Order</StyledButton>
+                <PayButton item={price}/>
             </ButtonWrapper>
             </LeftComponent>
             
             <Grid items lg={3} md={3} sm={12} xs={12}>
-                <TotalView cartItem={cartItems}/>
+                <TotalView cartItem={cartItems} setTprice={setPrice}/>
             </Grid>
         </Container>
         :

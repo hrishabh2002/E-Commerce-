@@ -27,7 +27,6 @@ font-weight:600;
 `
 const CartItem=({item})=>{
     const fassured = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png';
-
     const dispatch=useDispatch();
     const removeItemFromCart=(id)=>{
         dispatch(removeFromCart(id));

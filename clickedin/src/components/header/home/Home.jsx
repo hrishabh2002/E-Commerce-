@@ -8,6 +8,8 @@ import {useDispatch, useSelector} from "react-redux";
 import Slide from "./slide";
 import MidSlide from './midSlide';
 import MidSection from "./midSection";
+import { useState } from "react";
+import Products from "../../products";
 
 const Container=styled(Box)`
 background:#f2f2f2;
@@ -17,6 +19,7 @@ padding:10px;
 const Home=()=>{
 
     const { products }=useSelector(state=>state.getProducts); 
+    
   
     const dispatch=useDispatch();
 
@@ -31,6 +34,7 @@ const Home=()=>{
               <Banner/>
               <MidSlide product={products} title="Deal of the day" timer={true}/>
               <MidSection/>
+              <Products />
               <Slide product={products} title="Discount for you" timer={false}/>
               <Slide product={products} title="Suggesting items" timer={false}/>
               <Slide product={products} title="Top selections" timer={false}/>

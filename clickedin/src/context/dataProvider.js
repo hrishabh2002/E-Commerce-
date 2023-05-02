@@ -6,10 +6,11 @@ export const DataContext=createContext(null);
 
 const DataProvider=({children})=>{
     const [acc,setAcc]=useState('');
-
+    const [authenticate,setAuthenticate]=useState(false);
+   
     return(
         <DataContext.Provider value={{
-            acc,setAcc
+            acc,setAcc,authenticate,setAuthenticate
         }}>
             {children}
          </DataContext.Provider>
