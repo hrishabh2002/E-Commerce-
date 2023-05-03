@@ -2,9 +2,10 @@ import axios from 'axios';
 import {Button,styled} from '@mui/material'
 import { useContext } from 'react';
 import { DataContext } from '../../context/dataProvider';
+import { URL } from '../../Url';
 
 
-const Url='http://localhost:8000'
+const Url=URL;
 const StyledButton=styled(Button)`
 display:flex;
 margin-left:auto;

@@ -1,8 +1,9 @@
 import axios from "axios";
 import { GET_PRODUCTS_SUCCESS,GET_PRODUCTS_FAIL,GET_PRODUCT_DETAILS_REQUEST,GET_PRODUCT_DETAILS_FAIL,
 GET_PRODUCT_DETAILS_SUCCESS } from "../constant/productConstant";
+import { URL } from "../../Url";
 
-const URL='http://localhost:8000'
+// const URL='http://localhost:8000'
 export const getProducts= ()=>async(dispatch)=>{
     try{
         const {data}= await axios.get(`${URL}/products`);

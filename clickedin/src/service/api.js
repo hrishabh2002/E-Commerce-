@@ -1,7 +1,6 @@
 
 import axios from "axios";
-
-const URL='http://localhost:8000';
+import { URL } from "../Url";
 
 export const AuthenticateSignup= async(data)=>{
 
