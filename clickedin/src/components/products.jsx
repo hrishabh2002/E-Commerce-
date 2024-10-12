@@ -26,7 +26,7 @@ const Products=()=>{
    
     return(
         <div>
-            <h3>Other Products</h3>
+{/*             <h3>Other Products</h3>
             <Container>
             
                 {
@@ -41,7 +41,7 @@ const Products=()=>{
                    
                 }
             
-            </Container>
+            </Container> */}
         </div>
     )
 }
