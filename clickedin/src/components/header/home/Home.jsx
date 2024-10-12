@@ -9,7 +9,7 @@ import Slide from "./slide";
 import MidSlide from './midSlide';
 import MidSection from "./midSection";
 import { useState } from "react";
-import Products from "../../products";
+// import Products from "../../products";
 
 const Container=styled(Box)`
 background:#f2f2f2;
@@ -34,7 +34,7 @@ const Home=()=>{
               <Banner/>
               <MidSlide product={products} title="Deal of the day" timer={true}/>
               <MidSection/>
-              <Products />
+            
               <Slide product={products} title="Discount for you" timer={false}/>
               <Slide product={products} title="Suggesting items" timer={false}/>
               <Slide product={products} title="Top selections" timer={false}/>
